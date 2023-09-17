@@ -1,10 +1,10 @@
-import { $ } from '@wdio/globals'
 import Page from './page.js';
 
 class LoginPage extends Page {
     get btnLogin () {
         return $('input[type="submit"]');
     }
+
     get errorMsg () {
         return $('h3[data-test="error"]')
     }

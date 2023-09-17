@@ -1,6 +1,4 @@
 import { Given, When, Then } from '@wdio/cucumber-framework';
-import { expect, $ } from '@wdio/globals'
-
 import loginPage from '../pageobjects/login.page.js';
 
 const pages = {
@@ -20,4 +18,3 @@ Then(/^User should see “(.*)” error message$/, async (message) => {
     await expect(loginPage.errorMsg).toBeDisplayed();
     await expect(loginPage.errorMsg).toHaveTextContaining(message);
 });
-
