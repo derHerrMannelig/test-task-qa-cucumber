@@ -1,12 +1,11 @@
-Feature: The Internet Guinea Pig Website
+Feature: Login attempt without any credentials
 
-  Scenario Outline: As a user, I can log into the secure area
+  Scenario Outline: User shouldn't log into the secure area without valid credentials
 
-    Given I am on the login page
-    When I login with <username> and <password>
-    Then I should see a flash message saying <message>
+    Given User is located on the main page of saucedemo website
+    When User click “Login” button
+    Then User should see “<message>” error message
 
     Examples:
-      | username | password             | message                        |
-      | tomsmith | SuperSecretPassword! | You logged into a secure area! |
-      | foobar   | barfoo               | Your username is invalid!      |
+      | message                            |
+      | Epic sadface: Username is required |
